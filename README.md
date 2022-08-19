@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Techincal Activity
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web Application that displays Star Wars Characters
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) wiht Typescript Support and Test using JEST.
 
 ## Available Scripts
 
