@@ -13,26 +13,26 @@ const Detail: React.FunctionComponent = () => {
         gender: "",
         height: ""
     }
-    const { state } = useLocation() as LocationType;
+    const { state } = useLocation() as LocationType;  // Destructuring the State from Location Parameter
 
-    const { updateCharacterData } = useContext(ServiceContext) as ServiceContextType
+    const { updateCharacterData } = useContext(ServiceContext) as ServiceContextType // Using context to get the Update Character Function
 
-    const [toggle, setToggle] = useState<boolean>(false)
+    const [toggle, setToggle] = useState<boolean>(false) // State for Button Toggle
 
-    const [characterDetails, setDetails] = useState<CharacterType>(initialState)
+    const [characterDetails, setDetails] = useState<CharacterType>(initialState) // State for Persisting the data coming from the Home Component
 
     useEffect(() => {
         const details: ResultData = state.detail
         const index: number = state.index
-        setDetails({ name: details.name, hair_color: details.hair_color, eye_color: details.eye_color, gender: details.gender, height: details.height })
+        setDetails({ name: details.name, hair_color: details.hair_color, eye_color: details.eye_color, gender: details.gender, height: details.height }) // Setting the State from the data by destructuring it from the Location Parameter
     }, [state])
 
-    const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {   // Function for changing the State for the Attributes ('Gender', 'Height')
         const { name, value } = e.target;
         setDetails({ ...characterDetails, [name]: value })
     }
 
-    const onToggleButton = () => {
+    const onToggleButton = () => {                                      // Function for Toggling the Button by changing the state
         setToggle((prevState) => {
             if (prevState) {
                 updateCharacterData(characterDetails, state.index)
@@ -41,7 +41,7 @@ const Detail: React.FunctionComponent = () => {
         })
     }
 
-    return (
+    return (                                                                    // JSX for displaying the character detail, Conditional Rendering of JSX on the basis of Property 'Toggle'
         <div data-testid="detail-layout" className='detail-container'>
             <h1>{characterDetails?.name ?? ""}</h1>
             <div className='character-features'>

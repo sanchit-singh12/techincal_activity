@@ -1,8 +1,10 @@
 import axios, { AxiosError } from "axios"
 import { ApiData } from "../types/types"
 
+const ApiUrl = "https://swapi.dev/api/people/?page=1"
 
-export async function getAPIData(url: string = "https://swapi.dev/api/people/?page=1"): Promise<ApiData> {
+
+export async function getAPIData(url: string = ApiUrl): Promise<ApiData> {
     try {
         let response = await axios.get<ApiData>(url)
         return response?.data

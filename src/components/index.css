@@ -29,6 +29,7 @@
 
 .no-data-container {
     width: 100%;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +65,7 @@
     background: transparent;
     color: white;
     outline: none;
-    border: 2px solid #46fdff;
+    border: 2px solid aqua;
     padding: 10px;
     border-radius: 15px;
 }
@@ -83,6 +84,7 @@
 
 
 @media only screen and (max-width: 920px) {
+
     .container {
         justify-content: space-evenly;
     }
@@ -94,6 +96,7 @@
 }
 
 @media only screen and (max-width: 674px) {
+
     .container {
         justify-content: space-evenly;
     }

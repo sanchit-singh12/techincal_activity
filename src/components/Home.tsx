@@ -7,16 +7,16 @@ import './index.css'
 
 const Home: React.FunctionComponent = (props) => {
 
-    const history = useNavigate();
+    const history = useNavigate();                   // Using useNavigate hook for changing the route
 
-    const { charactersList = [] } = useContext(ServiceContext) as ServiceContextType
+    const { charactersList = [] } = useContext(ServiceContext) as ServiceContextType   // Destructuring the Character Listing from Service Context
 
 
-    const onCardClick = (data: ResultData, index: number) => {
+    const onCardClick = (data: ResultData, index: number) => {        // Function used for triggering the route change with character detail passed in params of route
         history("detail", { state: { detail: data, index } })
     }
 
-    return (
+    return (                                                            // JSX for dispalying the character cards
         <div data-testid="layout-container" className='container'>
             {charactersList && charactersList.length ? charactersList?.map((item, index) => {
                 return (
@@ -32,7 +32,7 @@ const Home: React.FunctionComponent = (props) => {
                         </div>
                     </div>
                 )
-            }) : <div className='no-data-container'><h1>No Data Found !</h1></div>}
+            }) : <div className='no-data-container'><h1>Loading....</h1></div>}
         </div >
     )
 }

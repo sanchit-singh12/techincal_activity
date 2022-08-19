@@ -8,7 +8,7 @@ import './App.css';
 import ServiceProvider from './service/context/context';
 
 const App: React.FunctionComponent = (props) => {
-  return (
+  return (                                                         // Service Provider for Wrapping the entire Application and Routes
     <>
       <ServiceProvider>
         <div className='header-container'>
