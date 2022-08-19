@@ -1,2 +1,2 @@
-# techincal_activity
+# Techincal Activity
 Web Application that displays Star Wars Characters
